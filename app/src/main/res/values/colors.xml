@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <color name="background_bottom_menu">#F2F2F2</color>
+    <color name="on_click_btn_bottom_menu">#0DCDAA</color>
+    <color name="on_click_static_btn_bottom_menu">#BDBDBD</color>
+
+
 </resources>
