@@ -7,5 +7,6 @@
     <color name="on_click_btn_bottom_menu">#0DCDAA</color>
     <color name="on_click_static_btn_bottom_menu">#BDBDBD</color>
 
+    <color name="text_clr_main_fragment">#262627</color>
 
 </resources>
