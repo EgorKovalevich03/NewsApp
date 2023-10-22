@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.newsapp.R
-import com.example.newsapp.databinding.FragmentFavoriteBinding
 import com.example.newsapp.databinding.FragmentMainBinding
 import com.example.newsapp.ui.adapters.NewsAdapter
 import com.example.newsapp.utils.Resource
