@@ -31,7 +31,7 @@
             android:id="@+id/article_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_clr_main_fragment"
+            android:textColor="@color/text_clr_black"
             android:textSize="12sp"
             tools:text="Thu, Apr 19 · 20.00 Pm"/>
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="3"
-            android:textColor="@color/text_clr_main_fragment"
+            android:textColor="@color/text_clr_black"
             android:textSize="12sp"
             android:textStyle="bold"
             app:fontWeight="700"

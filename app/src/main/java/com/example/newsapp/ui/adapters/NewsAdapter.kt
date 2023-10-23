@@ -15,15 +15,15 @@ import kotlinx.android.synthetic.main.item_article.view.article_title
 
 class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    inner class NewsViewHolder(view : View): RecyclerView.ViewHolder(view)
+    inner class NewsViewHolder(view: View): RecyclerView.ViewHolder(view)
 
-    private val callback = object : DiffUtil.ItemCallback<Article>(){
+    private val callback = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
         }
 
         override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
-            return oldItem == newItem
+            return  oldItem == newItem
         }
     }
 
@@ -31,12 +31,8 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_article,parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
         )
-    }
-
-    override fun getItemCount(): Int {
-        return differ.currentList.size
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
@@ -46,12 +42,21 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
             article_image.clipToOutline = true
             article_title.text = article.title
             article_date.text = article.publishedAt
+
+            setOnClickListener {
+                onItemClickListener?.let { it(article) }
+            }
         }
     }
 
-    private var onItemClickListener: ((Article)-> Unit)? = null
+    override fun getItemCount(): Int {
+        return differ.currentList.size
+    }
 
-    fun setOnItemClickListener(listener: (Article) -> Unit){
+    private var onItemClickListener: ((Article) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
         onItemClickListener = listener
     }
+
 }
